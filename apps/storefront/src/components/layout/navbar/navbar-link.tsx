@@ -18,7 +18,10 @@ export function NavbarLink({href, ...rest}: ComponentProps<typeof Link>) {
         <NavigationMenuLink asChild active={isActive}>
             <Link
                 aria-current={isActive ? 'page' : undefined}
-                className={cn(navigationMenuTriggerStyle())}
+                className={cn(
+                    navigationMenuTriggerStyle(),
+                    'bg-transparent px-3 text-sm font-medium text-[#7a5f55] hover:bg-[#f7ebe7] hover:text-[#8f4f53] data-[active=true]:bg-[#f7ebe7] data-[active=true]:text-[#8f4f53] dark:text-[#f1c8c9] dark:hover:bg-[#4a2a2f] dark:hover:text-[#fff1ef] dark:data-[active=true]:bg-[#4a2a2f] dark:data-[active=true]:text-[#fff1ef]'
+                )}
                 href={href}
                 {...rest}
             />

@@ -60,6 +60,9 @@ export const config: VendureConfig = {
     port: +process.env.DB_PORT,
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
+    ssl: {
+  rejectUnauthorized: false,
+},
   },
   paymentOptions: {
     paymentMethodHandlers: [dummyPaymentHandler],

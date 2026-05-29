@@ -20,6 +20,7 @@ import path from "path";
 
 const IS_DEV = process.env.APP_ENV === "dev";
 const serverPort = +process.env.PORT || 3000;
+const useDbSsl = process.env.DB_SSL === "true";
 
 export const config: VendureConfig = {
   apiOptions: {
@@ -60,9 +61,7 @@ export const config: VendureConfig = {
     port: +process.env.DB_PORT,
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
-    ssl: {
-  rejectUnauthorized: false,
-},
+    ssl: useDbSsl ? { rejectUnauthorized: false } : false,
   },
   paymentOptions: {
     paymentMethodHandlers: [dummyPaymentHandler],

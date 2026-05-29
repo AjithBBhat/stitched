@@ -3,10 +3,6 @@ import { NextConfig } from 'next';
 const nextConfig: NextConfig = {
     cacheComponents: true,
 
-    turbopack: {
-        root: __dirname,
-    },
-
     images: {
         dangerouslyAllowLocalIP: true,
         remotePatterns: [

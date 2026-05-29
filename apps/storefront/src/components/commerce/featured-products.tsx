@@ -4,9 +4,9 @@ import {GetCollectionProductsQuery} from "@/lib/vendure/queries";
 
 async function getFeaturedCollectionProducts() {
     const result = await query(GetCollectionProductsQuery, {
-        slug: "electronics",
+        slug: "fur",
         input: {
-            collectionSlug: "electronics",
+            collectionSlug: "fur",
             take: 12,
             skip: 0,
             groupByProduct: true

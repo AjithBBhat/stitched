@@ -1,25 +1,33 @@
-import {NextConfig} from 'next';
+import { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
     cacheComponents: true,
+
+    turbopack: {
+        root: __dirname,
+    },
+
     images: {
-        // This is necessary to display images from your local Vendure instance
         dangerouslyAllowLocalIP: true,
         remotePatterns: [
             {
                 hostname: 'readonlydemo.vendure.io',
             },
             {
-                hostname: 'demo.vendure.io'
+                hostname: 'demo.vendure.io',
             },
             {
-                hostname: 'localhost'
-            }
+                hostname: 'localhost',
+            },
+            {
+                hostname: 'stitched-dhu3.onrender.com',
+            },
         ],
     },
+
     experimental: {
-        rootParams: true
-    }
+        rootParams: true,
+    },
 };
 
 export default nextConfig;
